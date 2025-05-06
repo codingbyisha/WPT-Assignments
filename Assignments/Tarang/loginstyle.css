@@ -1,0 +1,48 @@
+*{
+    font-family : 'Segoe Ui Light';
+    }
+    body{
+    background-color: rgb(92,107,192);
+    }
+    
+    #login-form-container{
+    width: 450px;
+    height: 400px;
+    background-color: white;
+    text-align: center;
+    margin: 160px auto;
+
+    }
+    input{
+    width: 60%;
+    margin-bottom: 20px;
+    padding-top : 12px;
+    padding-bottom: 12px;
+    }
+    #submit-btn{
+    width: 60%;
+    margin-bottom: 20px;
+    padding-top : 12px;
+    padding-bottom: 12px;
+    width: 30%;
+    background-color: #EF5350;
+    }
+    
+    #submit-btn:hover{
+    background: white;
+    border-style: solid;
+    color: #EF5350;
+    border-width: 2px;
+    border-color: #EF5350;
+    
+    }
+    h2{
+    padding-top: 50px;
+    }
+    .form-field{
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    outline : 0;
+    
+    }

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Price</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td id="item1" >Pen</td>
+                    <td class="price" id="price1">10</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td id="item2" >Notebook</td>
+                    <td class="price" id="price2">30</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td id="item3" >Eraser</td>
+                    <td class="price" id="price3">5</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Your Cart</h2>
+        <form id="userForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name of item</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input class="form-control" id="quantity" name="email" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Calculate Bill</button>
+        </form>
+
+        <div class="mt-4" id="result">
+            <p id="view"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById('name').value;
+
+            let quantity = document.getElementById('quantity').value;
+
+
+            let price1 = document.getElementById('price1').textContent;
+            let price2 = document.getElementById('price2').textContent;
+            let price3 = document.getElementById('price3').textContent;
+
+            let item1 = document.getElementById("item1").textContent;
+            let item2 = document.getElementById("item2").textContent;
+            let item3 = document.getElementById("item3").textContent;
+
+           
+            let sub_total=0;
+
+            if (name.toLowerCase()  === item1.toLowerCase() ) {
+                
+                sub_total = parseInt(quantity) * parseInt(price1);
+            }
+            else if(name.toLowerCase()  === item2.toLowerCase() ){
+                sub_total = parseInt(quantity) * parseInt(price2);
+            }
+            else if(name.toLowerCase()  === item3.toLowerCase() ){
+                sub_total = parseInt(quantity) * parseInt(price3);
+            }
+
+            let grant_total = sub_total+ 0.1*sub_total;
+
+            
+            const firstNameElement = document.createElement("p");
+            firstNameElement.innerHTML = "Name: " + name+`<br>`+ "Sub total is: "+ sub_total+`<br>`+"Total is: "+grant_total;
+            document.getElementById("result").appendChild(firstNameElement);
+        });
+
+
+    </script>
+
+
+
+</body>
+
+
+</html>

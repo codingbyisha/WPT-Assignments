@@ -1,0 +1,134 @@
+<! doctype html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset ="utf-8"/>
+
+</head>
+<body>
+
+<div>
+<p id = "demo"></p>
+</div>
+<script>
+
+//Q1.
+function processData(a , callBack){
+  let a1 = callBack(a);
+  console.log(a1);
+}
+function toUpperCase(b){
+return b.toUpperCase();
+}
+processData("hello", toUpperCase);
+
+//Q2.
+/*function forEachElement(array, callBack){
+array1 = callBack(array);
+for(let i1 =0; i1<array1.length;i1++){
+console.log(array1[i1]);
+}
+}
+function multiply(array){
+for(let i =0; i<array.length;i++){
+ array[i] = array[i] * 2; 
+}
+return array;
+}
+
+forEachElement([1,2,3,4,5,6,7], multiply);
+*/
+
+/*function forEachElement(array, callBack){
+array1 = callBack(array);
+for(let i1 =0; i1<array1.length;i1++){
+console.log(array1[i1]);
+}
+}
+forEachElement([1,2,3,4,5,6,7], function (array){
+for(let i =0; i<array.length;i++){
+ array[i] = array[i] * 2; 
+}
+return array;
+}
+);*/
+
+//Q3.
+/*function fetchData(url, callback){
+console.log(`Fetching data from: ${url}`);
+const response = `Response from ${url}`;
+
+console.log(response);
+
+setTimeout(() =>{
+
+callback(response);
+
+}
+
+,3000);
+}
+
+fetchData("https://www.google.com",function (response){
+console.log("Response received: ", response);
+}
+);*/
+
+//Q4.
+function fetchData(url, callback) {
+  console.log(`Fetching data from: ${url}`);
+
+  const isError = true; // Change to true to always simulate an error
+
+  if (isError) {
+    const error = `Error fetching data from ${url}`;
+    console.error(error);          // Log the error message
+    callback(error, null);         // Call the callback with the error and no data
+  } else {
+    const response = `Response from ${url}`;
+    console.log(response);         // Log the response message
+    callback(null, response);      // Call the callback with no error and the response
+  }
+}
+fetchData("google", function(error, response) {
+  if (error) {
+    console.log("Handled error:", error);   // Runs only if there was an error
+  } else {
+    console.log("Callback received:", response); // Runs if successful
+  }
+});
+
+
+//Q5.
+function fetchData(url, callback){
+console.log(`Fetching data from: ${url}`);
+const response = `Response from ${url}`;
+
+console.log(response);
+
+setTimeout(() =>{
+
+callback(response, processData);
+
+}
+
+,3000);
+}
+function setting(response, callback){
+console.log("Response received: ", response);
+callback(response, toUpperCase);
+}
+function processData(response, callBack){
+  let a1 = callBack(response);
+  console.log(a1);
+}
+function toUpperCase(b){
+return b.toUpperCase();
+}
+fetchData("https://www.google.com",setting);
+
+</script>
+</body>
+
+</html>

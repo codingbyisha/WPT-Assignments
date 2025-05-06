@@ -1,0 +1,69 @@
+*{
+	font-style: 'Segoe Ui Light';
+}
+#logo{
+	width:70px;
+	height:90px;
+}
+#navbar{
+	
+	width: 100%;
+	height: 100%;
+	
+}
+#nav-links{
+	float: right;
+	margin-top: 30px;
+}
+.green-button{
+	text-decoration: none;
+	margin-right:none ;
+	border-color: green;
+	border: solid;
+	border-width: 1px;
+	padding: 15px 20px;
+	border-radius: 20px;
+	color: green;
+	font-size: 18px;
+	font-weight:bold;
+	transition: background 0.5s;
+	background: white;
+}
+a:hover{
+	background: green;
+	color: white;
+}
+#description-section{
+	text-align: center;
+}
+#description-text{
+	text-align: justify;
+}
+.green-button:hover{
+	border-color: green;
+	border-width: solid;
+	padding: 15px 20px;
+	border-radius: 20px;
+	color: green;
+	font-size: 18px;
+	font-weight:bold;
+	transition: background 0.5s;
+	
+}
+
+#footer-contact{
+    text-decoration: none;
+	margin-right:none ;
+	border-color: green;
+	border: solid;
+	border-width: 1px;
+	padding: 15px 20px;
+	border-radius: 20px;
+	color: green;
+	font-size: 18px;
+	font-weight:bold;
+	transition: background 0.5s;
+	background: white;
+    margin: 12px auto;
+    
+}

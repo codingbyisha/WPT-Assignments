@@ -1,0 +1,101 @@
+<! doctype html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset ="utf-8"/>
+
+</head>
+<body>
+<p id="demo">
+hdgsbdbsd sbbs sbsnbxsxbsbasb sxbasb sxjbsb ssbb snbs x ssxbasbx xasbhasb s xassabxsab x sabasbs sx ashbs sjsshbasx c ashxbasn  s ashxas asbnjsx </p>
+<button onclick="changeStyle()">Styling</button>
+
+<form onsubmit="displayData(event)">
+<label>First Name:</label>
+<input type = "text" id="first">
+<label>Last Name:</label>
+<input type = "text">
+<label>Contact Number:</label>
+<input type = "text">
+<label>Email id:</label>
+<input type = "text">
+<button >SUBMIT</button>
+</form>
+
+<div id="output"><div>
+
+<label > Choose a country: </label>
+<select id="country" >
+<option value="">--Select--</option>
+<option value="India">India</option>
+<option value="USA">USA</option>
+<option value="UK">UK</option>
+</select>
+<button onclick="remove()">Clear </button>
+
+<p id="high" onmouseover="Highlight()">On mouse over here bold words and paragraph will be highlighted</p>
+
+<p id="high1" onmouseover="changeColor()">I <strong>just </strong>built a simple yet functional calculator using HTML, CSS, and JavaScript! This project helped me strengthen my front-end development skills, especially with DOM manipulation and responsive UI design. It handles basic arithmetic operations with a clean, user-friendly <strong>interface </strong>that works smoothly on both desktop and mobile. Feel free to check it out and share your thoughts or suggestions! 
+</p>
+
+<script>
+
+//Q1:
+function changeStyle(){
+var obj = document.getElementById("demo")
+obj.style.fontFamily = "Arial,sans-serif";
+obj.style.color = "red";
+obj.style.fontSize = "25px";
+}
+
+//Q2:
+function displayData(event){
+
+event.preventDefault();
+const input = document.getElementById("first").value;
+const firstNameElement = document.createElement("p");
+firstNameElement.innerHTML = "First Name: "+ input;
+document.getElementById("output").appendChild(firstNameElement);
+}
+
+
+//Q3.
+function remove(){
+    const drop = document.getElementById("country");
+    if(drop.options.length >= 1 ||  drop.options != "--select--"){
+            
+    //remoev() will delete entire...
+    drop.remove(1);
+    // specific index pass in ()
+    }
+}
+
+//Q4.
+function Highlight(){
+    const val = document.getElementById("high");
+    val.style.color = "blue";
+    val.style.fontSize= 45;
+    val.style.fontWeight = "bold";
+    val.style.textDecoration = "underline";
+
+
+}
+
+function changeColor(){
+const v = document.getElementById("high1");
+v.style.color = "green";
+const strongTags = document.querySelectorAll("p strong");
+//returns array of elements....
+strongTags.forEach(tag => {
+  tag.style.color = "red";
+});
+
+	
+	
+	
+	}
+</script>
+</body>
+
+</html>
